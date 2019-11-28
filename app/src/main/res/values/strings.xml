@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">AndroidQRCodeJAVA</string>
-    <string name="startTextValue">Start QRCode</string>
+    <string name="startTextValue">Create QRCode</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.androidqrcodejava;
+package com.example.androidqrcodejava.data.constant;
 
 public abstract class Constant {
     public static final String NAME_PREFERENCE_STORAGE = "World";

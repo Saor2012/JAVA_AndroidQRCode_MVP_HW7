@@ -2,11 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+    tools:context=".presentasion.activity.MainActivity">
     <data>
         <variable
             name="event"
-            type="com.example.androidqrcodejava.IPresenter.Listener" />
+            type="com.example.androidqrcodejava.presentasion.presenter.IPresenter.Listener" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,38 +14,36 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/resultQRCodeField"
-            android:layout_width="326dp"
-            android:layout_height="200dp"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/QRCodeImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/showQRCode"/>
+            app:layout_constraintTop_toBottomOf="@+id/showQRCode" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/showQRCode"
             android:layout_width="207dp"
             android:layout_height="72dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/startTextValue"
             android:onClick="@{() -> event.eventClick()}"
+            android:text="@string/startTextValue"
             app:layout_constraintBottom_toTopOf="@+id/resultQRCodeField"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleView"/>
+            app:layout_constraintTop_toBottomOf="@+id/titleView" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/titleView"
-            android:layout_width="326dp"
-            android:layout_height="133dp"
+            android:layout_width="0dp"
+            android:layout_height="95dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
             android:gravity="center"
@@ -54,14 +52,13 @@
             app:layout_constraintBottom_toTopOf="@+id/showQRCode"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/QRCodeImage"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"

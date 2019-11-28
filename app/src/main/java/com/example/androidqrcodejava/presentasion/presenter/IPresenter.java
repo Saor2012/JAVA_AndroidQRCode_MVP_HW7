@@ -1,6 +1,8 @@
-package com.example.androidqrcodejava;
+package com.example.androidqrcodejava.presentasion.presenter;
 
 import android.graphics.Bitmap;
+
+import com.example.androidqrcodejava.presentasion.presenter.base.IBasePresenter;
 
 public interface IPresenter {
     interface View {

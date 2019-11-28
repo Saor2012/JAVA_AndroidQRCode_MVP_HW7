@@ -1,11 +1,13 @@
-package com.example.androidqrcodejava;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.androidqrcodejava.presentasion.activity;
 
 import android.graphics.Bitmap;
-import android.os.Bundle;
 
+import com.example.androidqrcodejava.presentasion.presenter.base.IBasePresenter;
+import com.example.androidqrcodejava.presentasion.presenter.IPresenter;
+import com.example.androidqrcodejava.presentasion.presenter.Presenter;
+import com.example.androidqrcodejava.R;
 import com.example.androidqrcodejava.databinding.ActivityMainBinding;
+import com.example.androidqrcodejava.presentasion.activity.base.BaseActivity;
 
 import timber.log.Timber;
 
@@ -32,7 +34,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements I
     @Override
     protected void onDestroyView() {
         presenter.detachView();
-        SharedPreferencesStorage.getInstance().clearAll();
+        //SharedPreferencesStorage.getInstance().clearAll();
     }
 
     @Override

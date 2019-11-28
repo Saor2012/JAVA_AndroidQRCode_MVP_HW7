@@ -1,7 +1,9 @@
-package com.example.androidqrcodejava;
+package com.example.androidqrcodejava.data.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.example.androidqrcodejava.data.constant.Constant;
 
 public class SharedPreferencesStorage {
     private Constant constant;
@@ -39,6 +41,18 @@ public class SharedPreferencesStorage {
     }
     public boolean loadDataBooleanValue(String key) {
         return preferences.getBoolean(key, false);
+    }
+    /*public void clearDataStringValue(String key) {
+        preferences.edit().remove(key).apply();
+    }
+    public void clearDataLongValue(String key) {
+        preferences.edit().remove(key).apply();
+    }
+    public void clearDataBooleanValue(String key) {
+        preferences.edit().remove(key).apply();
+    }*/
+    public void clearDataValue(String key) {
+        preferences.edit().remove(key).apply();
     }
     public void clearAll() {
         preferences.edit().clear().apply();

@@ -1,4 +1,4 @@
-package com.example.androidqrcodejava;
+package com.example.androidqrcodejava.presentasion.activity.base;
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -7,6 +7,8 @@ import androidx.annotation.LayoutRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+
+import com.example.androidqrcodejava.presentasion.presenter.base.IBasePresenter;
 
 public abstract class BaseActivity<Binding extends ViewDataBinding> extends AppCompatActivity {
     private Binding binding;
