@@ -48,4 +48,11 @@ public class Repository implements IRepository{
     public void delete(String key) {
         SharedPreferencesStorage.getInstance().clearDataValue(key);
     }
+
+    /*@Override
+    public Single<String> getQRCode() {
+        return null;
+    }*/
+
+
 }

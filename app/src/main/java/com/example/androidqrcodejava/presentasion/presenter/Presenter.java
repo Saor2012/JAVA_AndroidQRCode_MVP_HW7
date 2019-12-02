@@ -13,6 +13,7 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import io.reactivex.CompletableObserver;
 import io.reactivex.Single;
+import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.DisposableSingleObserver;
 import timber.log.Timber;
@@ -20,9 +21,11 @@ import timber.log.Timber;
 public class Presenter implements IPresenter.Listener{
     private IPresenter.View view;
     private IInteractor interactor;
+    private CompositeDisposable disposable;
     private String key;
 
     public Presenter() {
+        //disposable = new CompositeDisposable();
         interactor = new Interactor();
     }
 
@@ -92,7 +95,19 @@ public class Presenter implements IPresenter.Listener{
         /*String str = SharedPreferencesStorage.getInstance().loadDataStringValue(Constant.NAME_QRCODE_PREFERENCE_STORAGE);
         if (!str.isEmpty()) view.setQRCodeImage(qrCode(str));
         else Timber.e("Invalid value for QRCode image " + str);*/
+        /*disposable.add(interactor.load(Constant.NAME_QRCODE_PREFERENCE_STORAGE).subscribe(new DisposableSingleObserver<Bitmap>() {
+            @Override
+            public void onSuccess(Bitmap bitmap) {
+                view.setQRCodeImage(bitmap);
+                dispose();
+            }
 
+            @Override
+            public void onError(Throwable e) {
+                Timber.e(e.getMessage());
+                view.message(e.getMessage());
+            }
+        }));*/
         interactor.load(Constant.NAME_QRCODE_PREFERENCE_STORAGE).subscribe(new DisposableSingleObserver<Bitmap>() {
             @Override
             public void onSuccess(Bitmap bitmap) {
@@ -188,5 +203,7 @@ public class Presenter implements IPresenter.Listener{
         if (view != null) view = null;
         if (key != null) key = null;
         if (interactor != null) interactor = null;
+        //if (disposable != null) disposable = null;
+
     }
 }

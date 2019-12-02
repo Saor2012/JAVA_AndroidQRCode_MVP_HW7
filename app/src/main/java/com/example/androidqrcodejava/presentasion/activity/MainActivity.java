@@ -16,19 +16,20 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements I
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.activity_main;
+        return R.layout.activity_main_v2;
     }
 
     @Override
     protected void initView() {
         presenter = new Presenter();
         getBinding().setEvent(presenter);
+        presenter.init();
     }
 
     @Override
     protected void onStartView() {
         presenter.startView(this);
-        presenter.init();
+//        presenter.init();
     }
 
     @Override

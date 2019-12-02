@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentasion.activity.MainActivity">
+    <data>
+        <variable
+            name="event"
+            type="com.example.androidqrcodejava.presentasion.presenter.IPresenter.Listener" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/resultQRCodeField"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/QRCodeImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/showQRCode"
+            android:layout_width="207dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{() -> event.eventClick()}"
+            android:text="@string/startTextValue"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleView"
+            android:layout_width="0dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="QRCode Reader"
+            android:textSize="22dp"
+            app:layout_constraintBottom_toTopOf="@+id/showQRCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/QRCodeImage"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultQRCodeField">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+
+            app:layout_constraintBottom_toTopOf="@+id/resultQRCodeField"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/showQRCode">
+
+            <RadioButton
+                android:id="@+id/radioBtnQRCode1"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:gravity="center"/>
+
+            <RadioButton
+                android:id="@+id/radioBtnQRCode2"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:gravity="center"/>
+
+            <RadioButton
+                android:id="@+id/radioBtnQRCode3"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:gravity="center"/>
+
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

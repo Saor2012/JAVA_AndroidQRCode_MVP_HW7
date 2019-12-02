@@ -25,9 +25,10 @@ public class Interactor extends BaseInteractor implements IInteractor {
                 .compose(applySingleSchedulers());
     }
 
+
     private Single<Bitmap> qrCode(String QRCode) { //QRCode object
         //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
-            //if(QRCode != null && !QRCode.isEmpty()) {
+            if(QRCode != null && !QRCode.isEmpty()) {
                 try {
                     BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                     //Timber.e(QRCode);
@@ -36,7 +37,7 @@ public class Interactor extends BaseInteractor implements IInteractor {
                     Timber.e(e.getMessage().toString());
                     return Single.error(new NullPointerException());
                 }
-            //} else return Single.error(new NullPointerException());
+            } else return Single.error(new NullPointerException());
         //}
         //return bitmap;
     }
